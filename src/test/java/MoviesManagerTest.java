@@ -1,9 +1,11 @@
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class MoviesManagerTest {
     @Test
-    public void test1(){
+    public void shouldFindAll(){
         MoviesManager manager = new MoviesManager();
         manager.add("First");
         manager.add("Second");
@@ -17,16 +19,16 @@ public class MoviesManagerTest {
     }
 
     @Test
-    public void test2(){
+    public void shouldFindLast(){
         MoviesManager manager = new MoviesManager();
         manager.add("First");
         manager.add("Second");
         manager.add("Third");
 
 
-        String[] expected = { "First", "Second", "Third" };
+        String[] expected = { "Third", "Second", "First" };
         String[] actual = manager.findLast();
 
-        assertArrayEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 }
