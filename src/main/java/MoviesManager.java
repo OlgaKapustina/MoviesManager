@@ -1,10 +1,7 @@
 public class MoviesManager {
     private String[] movies = new String[0];
-    private int limit;
-
-
+    private int limit = 10;
     public MoviesManager(){
-        limit = 10;
     }
 
     public MoviesManager(int limit){
@@ -43,7 +40,5 @@ public class MoviesManager {
             tmp[i] = movies[movies.length - 1 - i];
         }
         return tmp;
-
-
     }
 }
